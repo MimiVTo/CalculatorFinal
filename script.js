@@ -70,8 +70,8 @@ function equation(){
     }
     if (setOperator === "/"){
         //Sets it to actual numbers
-        result = parseInt(num1) / parseInt(num2);
-        if (num2 === 0){
+        result = parseInt(num1)/parseInt(num2);
+        if (parseInt(num2) === 0){
             //If the second number is a 0 while dividing, set to ERROR
             display.innerText = "ERROR";
         }
@@ -81,7 +81,12 @@ function equation(){
         }
     }
     //changes the first one to the result
-    num1 = result;
+    if (display.innerText === "ERROR"){
+        num1 = 0;
+    }
+    else{
+        num1 = result;
+    }
 
     console.log(result);
 }
