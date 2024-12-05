@@ -86,6 +86,8 @@ function equation(){
     
     if (operatorChosen===false){
         result += num1;
+        num1 = result;
+        num2 = "";
         console.log(result);
         if (num2Chosen === true){
             result += num2;
@@ -130,6 +132,7 @@ function equation(){
         num1 = 0;
         num2 = "";
         num1Chosen = false;
+        console.log(num2);
         // operatorChosen = false;
     }
     else{
