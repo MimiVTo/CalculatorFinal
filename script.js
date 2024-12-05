@@ -18,9 +18,11 @@ var reset = document.getElementById("resetBtn");
 var num1 = "";
 var num1Chosen = false;
 var num2 = "";
+var num2Chosen = false;
 var setOperator = ""
 var operatorChosen = false;
 var decimalChosen = false;
+var result = 0;
 
 
 //FUNCTIONS ------------------------------------------
@@ -49,6 +51,7 @@ function settingNums(event){
         //If the operator was chosen, goes into the num2
         
         if (decimalChosen === false && event.target.innerText === "."){
+            num2Chosen = true;
             num2 += (event.target.innerText);
             decimalChosen = true;
             console.log("returning")
@@ -80,12 +83,16 @@ function equation(){
  
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
-
-    var result = 0;
     
     if (operatorChosen===false){
-        result = num1;
+        result += num1;
+        console.log(result);
+        if (num2Chosen === true){
+            result += num2;
+            console.log(result);
+        }
         display.innerText = result;
+        return;
     }
 
     if (setOperator === "+"){
@@ -94,25 +101,26 @@ function equation(){
         result = num1 + num2;
         display.innerText = result;
     }
-    if (setOperator === "-"){
+    else if (setOperator === "-"){
         //Sets it to actual numbers
         result = num1 - num2;
         display.innerText = result;
     }
-    if (setOperator === "*"){
+    else if (setOperator === "*"){
         //Sets it to actual numbers
         result = num1 * num2;
         display.innerText = result;
     }
-    if (setOperator === "/"){
+
+    else{
         //Sets it to actual numbers
-        result = num1/num2;
-        if (parseInt(num2) === 0){
+        if (num2 === 0){
             //If the second number is a 0 while dividing, set to ERROR
             display.innerText = "";
             display.innerText = "ERROR";
         }
         else{
+            result = num1/num2;
             //If not, display the result
             display.innerText = result;
         }
@@ -121,12 +129,16 @@ function equation(){
     if (display.innerText === "ERROR"){
         num1 = 0;
         num2 = "";
+        num1Chosen = false;
+        // operatorChosen = false;
     }
     else{
         num1 = result;
         num2 = "";
+        console.log(num2);
     }
 
+    operatorChosen = false;
     console.log(result);
 }
 
