@@ -131,7 +131,6 @@ function equation(){
     if (display.innerText === "ERROR"){
         num1 = 0;
         num2 = "";
-        num1Chosen = false;
         console.log(num2);
         // operatorChosen = false;
     }
@@ -140,15 +139,15 @@ function equation(){
         num2 = "";
         console.log(num2);
     }
-
+    num1Chosen = false;
     operatorChosen = false;
     console.log(result);
 }
 
 function resetEquation(){
     //CLEARS EVERYTHING
-    num1 = 0;
-    num2 = 0;
+    num1 = "";
+    num2 = "";
     setOperator = "";
     num1Chosen = false;
     operatorChosen = false;
