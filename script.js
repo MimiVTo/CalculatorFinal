@@ -99,49 +99,54 @@ function equation(){
         return;
     }
     else{
-        
-    }
-    if (setOperator === "+"){
-        //Sets it to actual numbers
-        
-        result = num1 + num2;
-        display.innerText = result;
-    }
-    else if (setOperator === "-"){
-        //Sets it to actual numbers
-        result = num1 - num2;
-        display.innerText = result;
-    }
-    else if (setOperator === "*"){
-        //Sets it to actual numbers
-        result = num1 * num2;
-        display.innerText = result;
-    }
-    else{
-        //Sets it to actual numbers
-        if (num2 === 0){
-            //If the second number is a 0 while dividing, set to ERROR
-            display.innerText = "";
-            display.innerText = "ERROR";
+        if (setOperator === "+"){
+            //Sets it to actual numbers
+            
+            result = num1 + num2;
+            display.innerText = result;
+            console.log (result);
+        }
+        else if (setOperator === "-"){
+            //Sets it to actual numbers
+            result = num1 - num2;
+            display.innerText = result;
+            console.log (result);
+        }
+        else if (setOperator === "*"){
+            //Sets it to actual numbers
+            result = num1 * num2;
+            display.innerText = result;
+            console.log (result);
         }
         else{
-            result = num1/num2;
-            //If not, display the result
-            display.innerText = result;
+            //Sets it to actual numbers
+            if (num2 === 0){
+                //If the second number is a 0 while dividing, set to ERROR
+                display.innerText = "";
+                display.innerText = "ERROR";
+                console.log (result);
+            }
+            else{
+                result = num1/num2;
+                //If not, display the result
+                display.innerText = result;
+                console.log (result);
+            }
+        }
+        //changes the first one to the result
+        if (display.innerText === "ERROR"){
+            num1 = 0;
+            num2 = "";
+            console.log(num2);
+            // operatorChosen = false;
+        }
+        else{
+            num1 = result;
+            num2 = "";
+            console.log(num2);
         }
     }
-    //changes the first one to the result
-    if (display.innerText === "ERROR"){
-        num1 = 0;
-        num2 = "";
-        console.log(num2);
-        // operatorChosen = false;
-    }
-    else{
-        num1 = result;
-        num2 = "";
-        console.log(num2);
-    }
+    
     //finishing stuff
     num1Chosen = false;
     operatorChosen = false;
