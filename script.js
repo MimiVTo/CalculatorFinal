@@ -85,11 +85,13 @@ function equation(){
     num2 = parseFloat(num2);
     
     if (operatorChosen===false){
+        //If the operator hasnt been chosen yet, show the first number
         result += num1;
         num1 = result;
         num2 = "";
         console.log(result);
         if (num2Chosen === true){
+            //if the 2nd number has been chosen, just add the second num
             result += num2;
             console.log(result);
         }
@@ -139,6 +141,7 @@ function equation(){
         num2 = "";
         console.log(num2);
     }
+    //finishing stuff
     num1Chosen = false;
     operatorChosen = false;
     console.log(result);
