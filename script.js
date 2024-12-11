@@ -98,7 +98,9 @@ function equation(){
         display.innerText = result;
         return;
     }
-
+    else{
+        
+    }
     if (setOperator === "+"){
         //Sets it to actual numbers
         
@@ -115,7 +117,6 @@ function equation(){
         result = num1 * num2;
         display.innerText = result;
     }
-
     else{
         //Sets it to actual numbers
         if (num2 === 0){
