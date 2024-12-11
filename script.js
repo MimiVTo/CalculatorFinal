@@ -150,11 +150,13 @@ function equation(){
 function resetEquation(){
     //CLEARS EVERYTHING
     num1 = "";
-    num2 = "";
-    setOperator = "";
     num1Chosen = false;
+    num2 = "";
+    num2Chosen = false;
+    setOperator = ""
     operatorChosen = false;
-    display.innerText = "";
+    decimalChosen = false;
+    result = 0;
 }
 
 //EVENT LISTENERS -------------------------------------
