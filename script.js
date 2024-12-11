@@ -157,6 +157,7 @@ function resetEquation(){
     operatorChosen = false;
     decimalChosen = false;
     result = 0;
+    display.innerText = "";
 }
 
 //EVENT LISTENERS -------------------------------------
